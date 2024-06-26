@@ -5,19 +5,25 @@ import AyodaiLogo from '../images/ayodai.png'
 function UnderConstructionPage(){
     return (
         <div className={'container shadow p-3 m-auto bg-white rounded '}>
-            <div className={'row-cols-3'}>
-                <div className={'p-3 p-3 m-auto bg-white rounded'}>
-                    <Image src={AyodaiLogo}></Image>
+            <div className={'row justify-content-md-center'}>
+                <div className={'col-md-auto p-3 bg-white rounded'}>
+                    <Image src={AyodaiLogo} alt={'Ayodai logo'}></Image>
                 </div>
-                <div className={'TimerWrapper'}></div>
             </div>
-            <div className={'row-cols-1'}>
-                <label> Under construction</label>
+            <div className={'row p-3 m-auto bg-white'}>
+                <div className={'col'}>1 Day</div>
+                <div className={'col'}>2 Hours</div>
+                <div className={'col'}>3 Minutes</div>
+                <div className={'col'}>4 Seconds</div>
             </div>
-            <div className={'row-cols-1'}>
-                <label> Under construction</label>
+            <div className={'row justify-content-md-center'}>
+                <div className={'col-md-auto p-3 bg-white rounded'}>
+                    <label> Under construction</label>
+                </div>
+
             </div>
         </div>
+
     )
 }
 

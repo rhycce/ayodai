@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import AyodaiLogo from './images/ayodai.png'
+import {Route, Routes} from "react-router-dom";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
-  return (/**
-       <BrowserRouter>
-       <Routes>
-       <Route index path={'/'} element={<DashboardPage/>}/>
-       <Route  path={'/ayodai'} element={<DashboardPage/>}/>
-       </Routes>
-       </BrowserRouter>
-       **/
+  return (
+       <>
+           <Routes>
+            <Route index element={<DashboardPage/>}/>
+            <Route  path={'/ayodai'} element={<DashboardPage/>}/>
+           </Routes>
+       </>
+       /**
       <div className={'container shadow p-3 m-auto bg-white rounded '}>
           <div className={'row justify-content-md-center'}>
               <div className={'col-md-auto p-3 bg-white rounded'}>
@@ -29,7 +30,7 @@ function App() {
               </div>
 
           </div>
-      </div>
+      </div>**/
   );
 }
 
