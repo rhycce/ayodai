@@ -14,11 +14,12 @@ function UnderConstructionPage(){
             <div className={'row-cols-1'}>
                 <label> Under construction</label>
             </div>
+            <div className={'row-cols-1'}>
+                <label> Under construction</label>
+            </div>
         </div>
     )
 }
-
-
 
 
 export default UnderConstructionPage;

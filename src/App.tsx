@@ -7,7 +7,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<DashboardPage/>}/>
+        <Route index path={'/'} element={<DashboardPage/>}/>
+          <Route  path={'/ayodai'} element={<DashboardPage/>}/>
       </Routes>
     </BrowserRouter>
   );
