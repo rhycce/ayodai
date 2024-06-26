@@ -7,8 +7,7 @@ function App() {
   return (
        <>
            <Routes>
-            <Route index element={<DashboardPage/>}/>
-            <Route  path={'/ayodai'} element={<DashboardPage/>}/>
+            <Route path={'/'} element={<DashboardPage/>}/>
            </Routes>
        </>
        /**
