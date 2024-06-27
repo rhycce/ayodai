@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ayodai/static/css/main.b8bc805e.css",
-    "main.js": "/ayodai/static/js/main.1924a04a.js",
+    "main.css": "/ayodai/static/css/main.617ae580.css",
+    "main.js": "/ayodai/static/js/main.b7ee1b51.js",
     "static/js/453.457ef8ad.chunk.js": "/ayodai/static/js/453.457ef8ad.chunk.js",
     "static/media/ayodai.png": "/ayodai/static/media/ayodai.ce2c7df657a286e7cfa0.png",
     "index.html": "/ayodai/index.html",
-    "main.b8bc805e.css.map": "/ayodai/static/css/main.b8bc805e.css.map",
-    "main.1924a04a.js.map": "/ayodai/static/js/main.1924a04a.js.map",
+    "main.617ae580.css.map": "/ayodai/static/css/main.617ae580.css.map",
+    "main.b7ee1b51.js.map": "/ayodai/static/js/main.b7ee1b51.js.map",
     "453.457ef8ad.chunk.js.map": "/ayodai/static/js/453.457ef8ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8bc805e.css",
-    "static/js/main.1924a04a.js"
+    "static/css/main.617ae580.css",
+    "static/js/main.b7ee1b51.js"
   ]
 }
