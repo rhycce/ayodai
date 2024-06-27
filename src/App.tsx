@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.css';
-import {Route, Routes} from "react-router-dom";
-import DashboardPage from "./pages/DashboardPage";
+import React from 'react'
+import './App.css'
+import {Route, Routes} from "react-router-dom"
+import DashboardPage from "./pages/DashboardPage"
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
             <Route path={'/'} element={<DashboardPage />}/>
            </Routes>
        </>
-  );
+  )
 }
 
-export default App;
+export default App
