@@ -14,9 +14,11 @@ export function AyodaiDescriptionComponent(){
         <Container className={'p-3'}>
             <Card style={{maxWidth: '50rem'}}>
                 <CardHeader ><WelcomeGreetingComponent/></CardHeader>
-                <CardImg variant={'right'} src={GoalImage} alt={'Personal Goal Image'} title={'Personal Goal Image'} className={'min-w-36 w-1/3 m-auto'}/>
+                <CardImg variant={'right'} src={GoalImage} alt={'Personal Goal Image'} title={'Personal Goal Image'}
+                         className={'min-w-36 w-1/3 m-auto'}>
+                    <cite title="Adobe Firefly">Image by Adobe Firefly</cite></CardImg>
                 <CardBody className={'m-5'}>
-                    <center>
+                <center>
                         <blockquote className={'blockquote mb-0 text-wrap'}>
                             <p>
                                 {' '}
