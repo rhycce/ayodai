@@ -22,8 +22,8 @@ export function AyodaiDescriptionComponent(){
                         <blockquote className={'blockquote mb-0 text-wrap'}>
                             <p>
                                 {' '}
-                                "Success is focusing the full power of all you are on what you have a burning desire to
-                                achieve." {' '}
+                                `&quot;`Success is focusing the full power of all you are on what you have a burning desire to
+                                achieve.`&quot;` {' '}
                             </p>
                             <footer className={'blockquote-footer'}>
                                 <cite title="Wilfred Peterson">Wilfred Peterson</cite>
