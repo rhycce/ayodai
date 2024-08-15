@@ -1,4 +1,4 @@
-import {Card, CardBody, CardText, CardTitle} from "react-bootstrap";
+import {Card, CardBody, CardTitle} from "react-bootstrap";
 import React from "react";
 import Link from "next/link";
 
