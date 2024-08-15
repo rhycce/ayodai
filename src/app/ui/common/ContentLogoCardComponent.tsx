@@ -9,12 +9,12 @@ export function ContentLogoCardComponent({icon, name, url}: Readonly<{
     icon: React.ReactNode;
 }>){
     return (
-        <Card>
-            <CardBody >
+        <Card className={'content-center'}>
+            <CardBody  >
                 <Container className={'place-content-center'}>
                     <Link href={url}>
                         {icon}
-                        <h4>{name}</h4>
+                        <p className={'text-3xl'}>{name}</p>
                     </Link>
                 </Container>
             </CardBody>
