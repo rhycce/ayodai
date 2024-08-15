@@ -11,7 +11,7 @@ export function AyodaiDescriptionComponent(){
         <Container className={'my-3'}>
             <Row>
                 <Col>
-                    <Image variant={'right'} src={GoalImage} alt={'Personal Goal Image'} title={'Personal Goal Image'}/>
+                    <Image src={GoalImage} alt={'Personal Goal Image'} title={'Personal Goal Image'}/>
                     <cite title="Adobe Firefly"><small>Image by Adobe Firefly</small></cite>
                 </Col>
                 <Col>
