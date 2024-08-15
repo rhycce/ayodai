@@ -4,7 +4,9 @@ import {Row} from "react-bootstrap";
 import {CopyrightComponent} from "@/app/ui/common/CopyrightComponent";
 import React from "react";
 
-export default function PageContainer({children}){
+export default function PageContainer({children}: Readonly<{
+    children: React.ReactNode;
+}>){
     return (
         <main>
             <Container>
