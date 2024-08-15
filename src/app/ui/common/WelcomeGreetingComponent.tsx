@@ -10,5 +10,5 @@ export function WelcomeGreetingComponent(){
     }else{
         greeting = 'morning, Sunshine!';
     }
-    return (<div className={'p-3'}><center>Good {greeting}</center></div>);
+    return (<div className={'p-3'}>Good {greeting}</div>);
 }

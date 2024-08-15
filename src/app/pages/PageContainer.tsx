@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import {HeaderComponent} from "@/app/ui/common/HeaderComponent";
 import {Row} from "react-bootstrap";
+import {CopyrightComponent} from "@/app/ui/common/CopyrightComponent";
 
 export default function PageContainer({children}){
     return (
@@ -12,10 +13,8 @@ export default function PageContainer({children}){
                 <Row>
                     {children}
                 </Row>
-                <Row>
-                    {/*footer component here*/}
-                </Row>
             </Container>
+            <CopyrightComponent/>
         </main>
     )
 }
