@@ -8,7 +8,7 @@ const GoalImage = "Firefly personal development goals 9927.jpg"
 
 export function AyodaiDescriptionComponent(){
     return (
-        <Container className={'p-3'}>
+        <Container className={'my-3'}>
             <Row>
                 <Col>
                     <Image variant={'right'} src={GoalImage} alt={'Personal Goal Image'} title={'Personal Goal Image'}/>
