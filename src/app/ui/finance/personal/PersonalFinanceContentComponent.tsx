@@ -6,18 +6,18 @@ import {Col, Row} from "react-bootstrap";
 export function PersonalFinanceContentComponent(){
     return (
         <Container>
-            <Row>
-                <Col>
+            <Row className={'justify-content-md-center'}>
+                <Col xs lg={"4"}>
                     <ContentLogoCardComponent
                         icon={Icons.mortgageCalculator}
                         url={'/pages/finance/personal/mortgage-calculator'}
                         name={'Mortgage calculator'}/>
                 </Col>
-                <Col>
+                <Col xs lg={"4"}>
                     <ContentLogoCardComponent
                         icon={Icons.networthCalculator}
                         url={'/pages/finance/personal/networth-calculator'}
-                        name={'Net-worth calculator'}/>
+                        name={'Net worth calculator'}/>
                 </Col>
             </Row>
         </Container>

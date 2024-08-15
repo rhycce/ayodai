@@ -1,6 +1,5 @@
-import {Card, CardBody} from "react-bootstrap";
+import {Card, CardBody, CardText, CardTitle} from "react-bootstrap";
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Link from "next/link";
 
 export function ContentLogoCardComponent({icon, name, url}: Readonly<{
@@ -9,14 +8,13 @@ export function ContentLogoCardComponent({icon, name, url}: Readonly<{
     icon: React.ReactNode;
 }>){
     return (
-        <Card className={'content-center'}>
-            <CardBody  >
-                <Container className={'place-content-center'}>
-                    <Link href={url}>
-                        {icon}
-                        <p className={'text-3xl'}>{name}</p>
-                    </Link>
-                </Container>
+        <Card className={'text-center max-w-64'}>
+            <CardBody >
+                <Link href={url}><center>
+                    {icon}
+                </center>
+                </Link>
+                <CardTitle className={'text-3xl'}>{name}</CardTitle>
             </CardBody>
         </Card>
     )

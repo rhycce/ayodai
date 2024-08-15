@@ -7,13 +7,13 @@ import {PersonalFinanceContentComponent} from "@/app/ui/finance/personal/Persona
 export default function PersonalFinance(){
     return (
         <PageContainer>
-            <Container className={'m-auto'}>
-                <Row>
+            <Container>
+                <Row className={'place-content-center'}>
                     <PageBannerComponent
                         text={'Personal Finance Tools'}
                         subText={'Utilize these calculators to determine affordable monthly payments, how long till debt pay off, evaluate your financial health and more.'}/>
                 </Row>
-                <Row>
+                <Row >
                     <PersonalFinanceContentComponent/>
                 </Row>
             </Container>
