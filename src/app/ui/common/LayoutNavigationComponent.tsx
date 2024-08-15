@@ -1,19 +1,15 @@
 
 import Container from "react-bootstrap/Container";
-import {Image, Nav, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle, NavLink} from "react-bootstrap";
+import { Nav, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle, NavLink} from "react-bootstrap";
 import React from "react";
-const AyodaiLogo =  "ayodai_cropped.png"
+import {AyodaiLogoSVG} from "@/app/ui/common/AyodaiLogoSVG";
 
 export function LayoutNavigationComponent(){
     return (
-        <Navbar expand={'lg'}>
+        <Navbar expand={'lg'} className={'bg-body-tertiary'}>
             <Container>
                 <NavbarBrand href={'/'} >
-                    <Image
-                        src={AyodaiLogo}
-                        alt={"Ayodai Logo"}
-                        title={'Ayodai Logo'}
-                        className={'align-top max-h-20'} />
+                    <AyodaiLogoSVG/>
                 </NavbarBrand>
                 <NavbarToggle aria-controls={'main-navbar-nav'}/>
                 <NavbarCollapse id={'main-navbar-nav'}>
