@@ -8,7 +8,7 @@ export function ContentLogoCardComponent({icon, name, url}: Readonly<{
     icon: React.ReactNode;
 }>){
     return (
-        <Card className={'text-center max-w-64'}>
+        <Card className={'text-center max-w-64 shadow'}>
             <CardBody >
                 <Link href={url}><center>
                     {icon}
