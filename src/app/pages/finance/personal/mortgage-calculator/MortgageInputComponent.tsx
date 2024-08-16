@@ -1,44 +1,15 @@
 'use client';
 
 import {useState} from "react";
-import {CreditScore, Mortgage} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
+import {Mortgage, numberToTwoDecimalPlaces} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
 import {Form, FormCheck, FormControl, FormGroup, FormLabel, FormSelect, InputGroup} from "react-bootstrap";
 import InputGroupText from "react-bootstrap/InputGroupText";
 
-export function MortgageInputComponent(){
-    const [mortgage, setMortgage] = useState<Mortgage>({
-        amount : 450000,
-        downPaymentAmount: 85000,
-        downPaymentPercentage: 20,
-        term: 20,
-        interestRate: 6.5,
-        zipCode: 10040,
-        extraPrinciplePayment: 0,
-        pmi: 0,
-        creditScore: CreditScore['740+'],
-        propertyTax: 0,
-        hoaFees: 0,
-        homeOwnersInsurance: 0,
-        extraPayment: 0,
-    })
-    let [extended, setExtended] = useState<boolean>(false)
-
-    function setField(fieldName: string, value: string){
-        console.log('setfield: <' + fieldName + ', ' + value + '>')
-        const newMortgage = {...mortgage}
-        const intValue = parseInt(value)
-        if(fieldName === 'creditScore')
-            newMortgage.creditScore = CreditScore[value]
-        else
-            newMortgage[fieldName] = intValue;
-        if(fieldName === 'downPaymentAmount' || fieldName === 'amount')
-            newMortgage.downPaymentPercentage = (newMortgage.downPaymentAmount * 100)/newMortgage.amount
-        if(fieldName === 'downPaymentPercentage')
-            newMortgage.downPaymentAmount = (newMortgage.downPaymentPercentage/100) * newMortgage.amount
-        console.log(`${JSON.stringify(newMortgage)}`)
-        setMortgage(newMortgage)
+export function MortgageInputComponent(x: Mortgage) {
+    const [extended, setExtended] = useState<boolean>(false)
+    function updateExtended(value: boolean){
+        setExtended(value)
     }
-
 
     return (
         <Form>
@@ -48,7 +19,12 @@ export function MortgageInputComponent(){
                 </FormLabel>
                 <InputGroup>
                     <InputGroupText>$</InputGroupText>
-                    <FormControl type={'number'} placeholder={'0'} value={mortgage.amount} onChange={(e) => setField('amount', e.target.value)}/>
+                    <FormControl type={'number'}
+                                 value={numberToTwoDecimalPlaces(x.amount)}
+                                 placeholder={'0'}
+                                 onChange={(e) => {
+                                     x.updateAmount ? x.updateAmount(e.target.value) : logSilentUpdate('amount');
+                                 }}/>
                 </InputGroup>
             </FormGroup>
             <FormGroup className={'mb-3'} >
@@ -58,11 +34,13 @@ export function MortgageInputComponent(){
                 <InputGroup>
                     <InputGroupText>$</InputGroupText>
                     <FormControl type={'number'}
+                                 value={numberToTwoDecimalPlaces(x.downPaymentAmount)}
                                  placeholder={'0'}
-                                 defaultValue={mortgage.downPaymentAmount}
                                  aria-label={'downPaymentAmount'}
                                  id={'downPaymentAmount'}
-                                 onChange={(e) => setField('downPaymentAmount', e.target.value)}
+                                 onChange={(e) => {
+                                     x.updatePaymentAmount ? x.updatePaymentAmount(e.target.value) : logSilentUpdate('downPaymentAmount');
+                                 }}
                     />
                 </InputGroup>
             </FormGroup>
@@ -72,11 +50,13 @@ export function MortgageInputComponent(){
                 </FormLabel>
                 <InputGroup>
                     <FormControl type={'number'}
+                                 value={numberToTwoDecimalPlaces(x.downPaymentPercentage)}
                                  placeholder={'0'}
-                                 defaultValue={mortgage.downPaymentPercentage}
                                  aria-label={'downPaymentPercentage'}
                                  id={'downPaymentPercentage'}
-                                 onChange={(e) => setField('downPaymentPercentage', e.target.value)}
+                                 onChange={(e) => {
+                                     x.updatePaymentPercentage ? x.updatePaymentPercentage(e.target.value) : logSilentUpdate('downPaymentPercentage');
+                                 }}
                     />
                     <InputGroupText>%</InputGroupText>
                 </InputGroup>
@@ -87,8 +67,10 @@ export function MortgageInputComponent(){
                 </FormLabel>
                 <InputGroup>
                     <FormSelect id={'formLoanTerm'}
-                                defaultValue={mortgage.term}
-                                onChange={(e) => setField('term', e.target.value)}>
+                                value={x.term}
+                                onChange={(e) => {
+                                    x.updateTerm ? x.updateTerm(e.target.value) : logSilentUpdate('term');
+                                }}>
                         <option value={30}>30</option>
                         <option value={20}>20 </option>
                         <option value={15}>15 </option>
@@ -103,9 +85,11 @@ export function MortgageInputComponent(){
                 </FormLabel>
                 <InputGroup>
                     <FormControl type={'number'}
+                                 value={numberToTwoDecimalPlaces(x.interestRate)}
                                  placeholder={'0'}
-                                 defaultValue={mortgage.interestRate}
-                                 onChange={(e) => setField('interestRate', e.target.value)}/>
+                                 onChange={(e) => {
+                                     x.updateInterestRate ? x.updateInterestRate(e.target.value) : logSilentUpdate('interestRage');
+                                 }}/>
                     <InputGroupText>%</InputGroupText>
                 </InputGroup>
 
@@ -114,21 +98,25 @@ export function MortgageInputComponent(){
                 <FormLabel>
                     ZIP code
                 </FormLabel>
-                <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.zipCode}
-                             onChange={(e) => setField('zipCode', e.target.value)}/>
+                <FormControl type={'number'} value={x.zipCode} placeholder={'0'}
+                             onChange={(e) => {
+                                 x.updateZipcode ? x.updateZipcode(e.target.value) : logSilentUpdate('zipCode');
+                             }}/>
             </FormGroup>
             <FormCheck type={'switch'}
                        id={'extendedSwitch'}
                        label={'Taxes, PMI, HOA...'}
-                       onChange={(e) => setExtended(e.target.checked)}/>
+                       onChange={(e) => updateExtended(e.target.checked)}/>
             {extended && <>
                 <FormGroup className={'mb-3'} controlId={'formCreditScore'}>
                     <FormLabel>
                         Credit Score
                     </FormLabel>
                     <FormSelect id={'formCreditScore'}
-                                defaultValue={mortgage.creditScore}
-                                onChange={(e) => setField('creditScore', e.target.value)}>
+                                value={x.creditScore}
+                                onChange={(e) => {
+                                    x.updateCreditScore ? x.updateCreditScore(e.target.value) : logSilentUpdate('creditScore');
+                                }}>
                         <option value={'740+'}>740+</option>
                         <option value={'720 - 739'}>720 - 739</option>
                         <option value={'700 - 718'}>700 - 718</option>
@@ -143,8 +131,10 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.propertyTax}
-                                     onChange={(e) => setField('propertyTax', e.target.value)}/>
+                        <FormControl type={'number'} value={x.propertyTax} placeholder={'0'}
+                                     onChange={(e) => {
+                                         x.updatePropertyTax ? x.updatePropertyTax(e.target.value) : logSilentUpdate('propertyTax');
+                                     }}/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup className={'mb-3'} controlId={'formHomeownersInsurance'}>
@@ -153,8 +143,10 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.homeOwnersInsurance}
-                                     onChange={(e) => setField('homeOwnersInsurance', e.target.value)}/>
+                        <FormControl type={'number'} value={x.homeOwnersInsurance} placeholder={'0'}
+                                     onChange={(e) => {
+                                         x.updateHomeOwnersInsurance ? x.updateHomeOwnersInsurance(e.target.value) : logSilentUpdate('homeOwnersInsurance');
+                                     }}/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup className={'mb-3'} controlId={'formMortgagePMI'}>
@@ -163,8 +155,10 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.pmi}
-                                     onChange={(e) => setField('pmi', e.target.value)}/>
+                        <FormControl type={'number'} value={x.pmi} placeholder={'0'}
+                                     onChange={(e) => {
+                                         x.updatePmi ? x.updatePmi(e.target.value) : logSilentUpdate('pmi');
+                                     }}/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup className={'mb-3'} controlId={'formMortgageHOA'}>
@@ -173,8 +167,10 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.hoaFees}
-                                     onChange={(e) => setField('hoaFees', e.target.value)}/>
+                        <FormControl type={'number'} value={x.hoaFees} placeholder={'0'}
+                                     onChange={(e) => {
+                                         x.updateHoaFees ? x.updateHoaFees(e.target.value) : logSilentUpdate('hoaFees');
+                                     }}/>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup className={'mb-3'} controlId={'formExtraPayment'}>
@@ -183,11 +179,19 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.extraPayment}
-                                     onChange={(e) => setField('extraPayment', e.target.value)}/>
+                        <FormControl type={'number'}
+                                     value={numberToTwoDecimalPlaces(x.extraPrinciplePayment)}
+                                     placeholder={'0'}
+                                     onChange={(e) => {
+                                         x.updateExtraPayment ? x.updateExtraPayment(e.target.value) : logSilentUpdate('extraPayment');
+                                     }}/>
                     </InputGroup>
                 </FormGroup>
             </>}
         </Form>
     );
+}
+
+function logSilentUpdate(field: string){
+    console.log(`Update field ignored: ${field}`)
 }
