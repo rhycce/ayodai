@@ -13,20 +13,30 @@ export function MortgageInputComponent(){
         term: 20,
         interestRate: 6.5,
         zipCode: 10040,
+        extraPrinciplePayment: 0,
+        pmi: 0,
+        creditScore: CreditScore['740+'],
+        propertyTax: 0,
+        hoaFees: 0,
+        homeOwnersInsurance: 0,
+        extraPayment: 0,
     })
-    const [extended, setExtended] = useState<boolean>(false)
+    let [extended, setExtended] = useState<boolean>(false)
 
     function setField(fieldName: string, value: string){
+        console.log('setfield: <' + fieldName + ', ' + value + '>')
+        const newMortgage = {...mortgage}
         const intValue = parseInt(value)
         if(fieldName === 'creditScore')
-            mortgage.creditScore = CreditScore[value]
+            newMortgage.creditScore = CreditScore[value]
         else
-            mortgage[fieldName] = intValue;
-        if(fieldName === 'downPaymentAmount')
-            mortgage.downPaymentPercentage = (mortgage.downPaymentAmount * 100)/mortgage.amount
+            newMortgage[fieldName] = intValue;
+        if(fieldName === 'downPaymentAmount' || fieldName === 'amount')
+            newMortgage.downPaymentPercentage = (newMortgage.downPaymentAmount * 100)/newMortgage.amount
         if(fieldName === 'downPaymentPercentage')
-            mortgage.downPaymentAmount = (mortgage.downPaymentPercentage/100) * mortgage.amount
-        setMortgage(mortgage);
+            newMortgage.downPaymentAmount = (newMortgage.downPaymentPercentage/100) * newMortgage.amount
+        console.log(`${JSON.stringify(newMortgage)}`)
+        setMortgage(newMortgage)
     }
 
 
@@ -41,7 +51,7 @@ export function MortgageInputComponent(){
                     <FormControl type={'number'} placeholder={'0'} value={mortgage.amount} onChange={(e) => setField('amount', e.target.value)}/>
                 </InputGroup>
             </FormGroup>
-            <FormGroup className={'mb-3'} controlId={'formDownPaymentAmount'}>
+            <FormGroup className={'mb-3'} >
                 <FormLabel htmlFor={'downPaymentAmount'}>
                     Down payment amount
                 </FormLabel>
@@ -49,21 +59,21 @@ export function MortgageInputComponent(){
                     <InputGroupText>$</InputGroupText>
                     <FormControl type={'number'}
                                  placeholder={'0'}
-                                 value={mortgage.downPaymentAmount}
+                                 defaultValue={mortgage.downPaymentAmount}
                                  aria-label={'downPaymentAmount'}
                                  id={'downPaymentAmount'}
                                  onChange={(e) => setField('downPaymentAmount', e.target.value)}
                     />
                 </InputGroup>
             </FormGroup>
-            <FormGroup className={'mb-3'} controlId={'formDownPaymentPercentage'}>
+            <FormGroup className={'mb-3'}>
                 <FormLabel htmlFor={'downPaymentPercentage'}>
                     Down payment percentage
                 </FormLabel>
                 <InputGroup>
                     <FormControl type={'number'}
                                  placeholder={'0'}
-                                 value={mortgage.downPaymentPercentage}
+                                 defaultValue={mortgage.downPaymentPercentage}
                                  aria-label={'downPaymentPercentage'}
                                  id={'downPaymentPercentage'}
                                  onChange={(e) => setField('downPaymentPercentage', e.target.value)}
@@ -71,13 +81,13 @@ export function MortgageInputComponent(){
                     <InputGroupText>%</InputGroupText>
                 </InputGroup>
             </FormGroup>
-            <FormGroup className={'mb-3'} controlId={'formMortgageTerm'}>
+            <FormGroup className={'mb-3'} >
                 <FormLabel htmlFor={'formLoanTerm'}>
                     Loan term
                 </FormLabel>
                 <InputGroup>
                     <FormSelect id={'formLoanTerm'}
-                                value={mortgage.term}
+                                defaultValue={mortgage.term}
                                 onChange={(e) => setField('term', e.target.value)}>
                         <option value={30}>30</option>
                         <option value={20}>20 </option>
@@ -94,7 +104,7 @@ export function MortgageInputComponent(){
                 <InputGroup>
                     <FormControl type={'number'}
                                  placeholder={'0'}
-                                 value={mortgage.interestRate}
+                                 defaultValue={mortgage.interestRate}
                                  onChange={(e) => setField('interestRate', e.target.value)}/>
                     <InputGroupText>%</InputGroupText>
                 </InputGroup>
@@ -104,7 +114,7 @@ export function MortgageInputComponent(){
                 <FormLabel>
                     ZIP code
                 </FormLabel>
-                <FormControl type={'number'} placeholder={'0'} value={mortgage.zipCode}
+                <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.zipCode}
                              onChange={(e) => setField('zipCode', e.target.value)}/>
             </FormGroup>
             <FormCheck type={'switch'}
@@ -117,7 +127,7 @@ export function MortgageInputComponent(){
                         Credit Score
                     </FormLabel>
                     <FormSelect id={'formCreditScore'}
-                                value={mortgage.creditScore}
+                                defaultValue={mortgage.creditScore}
                                 onChange={(e) => setField('creditScore', e.target.value)}>
                         <option value={'740+'}>740+</option>
                         <option value={'720 - 739'}>720 - 739</option>
@@ -132,9 +142,9 @@ export function MortgageInputComponent(){
                         Property taxes per month
                     </FormLabel>
                     <InputGroup>
-                        <FormControl type={'number'} placeholder={'0'} value={mortgage.propertyTax}
+                        <InputGroupText>$</InputGroupText>
+                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.propertyTax}
                                      onChange={(e) => setField('propertyTax', e.target.value)}/>
-                        <InputGroupText>&</InputGroupText>
                     </InputGroup>
                 </FormGroup>
                 <FormGroup className={'mb-3'} controlId={'formHomeownersInsurance'}>
@@ -143,7 +153,7 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} value={mortgage.homeOwnersInsurance}
+                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.homeOwnersInsurance}
                                      onChange={(e) => setField('homeOwnersInsurance', e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
@@ -153,7 +163,7 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} value={mortgage.pmi}
+                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.pmi}
                                      onChange={(e) => setField('pmi', e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
@@ -163,7 +173,7 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} value={mortgage.hoaFees}
+                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.hoaFees}
                                      onChange={(e) => setField('hoaFees', e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
@@ -173,7 +183,7 @@ export function MortgageInputComponent(){
                     </FormLabel>
                     <InputGroup>
                         <InputGroupText>$</InputGroupText>
-                        <FormControl type={'number'} placeholder={'0'} value={mortgage.extraPayment}
+                        <FormControl type={'number'} placeholder={'0'} defaultValue={mortgage.extraPayment}
                                      onChange={(e) => setField('extraPayment', e.target.value)}/>
                     </InputGroup>
                 </FormGroup>
