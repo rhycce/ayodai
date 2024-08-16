@@ -2,7 +2,7 @@ import React from "react";
 
 export function PageBannerComponent({text, subText}: Readonly<{
     text: string,
-    subText: string|null
+    subText: string|undefined
 }>){
     return (<div className={'text-center m-5'}>
         <p className={'text-4xl'}><b>{text}</b></p>
