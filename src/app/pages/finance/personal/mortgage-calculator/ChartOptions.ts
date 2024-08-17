@@ -1,3 +1,8 @@
+import {
+    MonthlyBreakdown,
+    numberToTwoDecimalPlaces
+} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
+
 export const ChartOptionsList: IChartOptions[] = [
     {
         key: 'principalInterest',
@@ -21,7 +26,7 @@ export const ChartOptionsList: IChartOptions[] = [
     },
     {
         key: 'homeOwnerInsurance',
-        label: 'Homeowner&apos;s insurance',
+        label: `Homeowner's insurance`,
         color: '#DDDDDD'
     },
 ]
@@ -32,15 +37,18 @@ export interface IChartOptions{
     color: string
 }
 
-export function generateLabelAndColors(){
+export function generateLabelAndColors(monthlyPayment: MonthlyBreakdown){
     const colors: string[] = []
     const labels: string[] = [];
+    const values: number[] = []
     for (let i = 0; i < ChartOptionsList.length; i++) {
+        values[i] = Number(numberToTwoDecimalPlaces(monthlyPayment[ChartOptionsList[i].key]))
         colors[i] = ChartOptionsList[i].color
         labels[i] = ChartOptionsList[i].label
     }
     return{
         colors,
-        labels
+        labels,
+        values
     }
 }
