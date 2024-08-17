@@ -7,6 +7,7 @@ import {PageBannerComponent} from "@/app/ui/common/PageBannerComponent";
 import {MortgageInputComponent} from "@/app/pages/finance/personal/mortgage-calculator/MortgageInputComponent";
 import {useState} from "react";
 import {CreditScore} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
+import {MortgageBreakdownComponent} from "@/app/pages/finance/personal/mortgage-calculator/MortgageBreakdownComponent";
 
 export default function MortgageCalculator(){
     const [amount, setAmount] = useState<number>(450000)
@@ -81,35 +82,59 @@ export default function MortgageCalculator(){
                     <PageBannerComponent text={'Mortgage Calculator'} subText={undefined}/>
                 </Row>
                 <Row>
-                    <Col >
+                    <Col md={2} lg={3} xl={3} xxl={3}>
                         <MortgageInputComponent
-    amount={amount}
-    downPaymentAmount={downPaymentAmount}
-    downPaymentPercentage={downPaymentPercentage}
-    term={term}
-    interestRate={interestRate}
-    zipCode={zipCode}
-    extraPrinciplePayment={extraPrinciplePayment}
-    pmi={pmi}
-    propertyTax={propertyTax}
-    creditScore={creditScore}
-    hoaFees={hoaFees}
-    homeOwnersInsurance={homeOwnersInsurance}
-    updateAmount={updateAmount}
-    updatePaymentAmount={updatePaymentAmount}
-    updatePaymentPercentage={updatePaymentPercentage}
-    updateTerm={updateTerm}
-    updateCreditScore={updateCreditScore}
-    updateZipcode={updateZipcode}
-    updateHomeOwnersInsurance={updateHomeOwnersInsurance}
-    updateHoaFees={updateHoaFees}
-    updateInterestRate={updateInterestRate}
-    updatePropertyTax={updatePropertyTax}
-    updateExtraPayment={updateExtraPayment}
-    updatePmi={updatePmi}/>
+                            amount={amount}
+                            downPaymentAmount={downPaymentAmount}
+                            downPaymentPercentage={downPaymentPercentage}
+                            term={term}
+                            interestRate={interestRate}
+                            zipCode={zipCode}
+                            extraPrinciplePayment={extraPrinciplePayment}
+                            pmi={pmi}
+                            propertyTax={propertyTax}
+                            creditScore={creditScore}
+                            hoaFees={hoaFees}
+                            homeOwnersInsurance={homeOwnersInsurance}
+                            updateAmount={updateAmount}
+                            updatePaymentAmount={updatePaymentAmount}
+                            updatePaymentPercentage={updatePaymentPercentage}
+                            updateTerm={updateTerm}
+                            updateCreditScore={updateCreditScore}
+                            updateZipcode={updateZipcode}
+                            updateHomeOwnersInsurance={updateHomeOwnersInsurance}
+                            updateHoaFees={updateHoaFees}
+                            updateInterestRate={updateInterestRate}
+                            updatePropertyTax={updatePropertyTax}
+                            updateExtraPayment={updateExtraPayment}
+                            updatePmi={updatePmi}/>
                     </Col>
                     <Col>
-
+                        <MortgageBreakdownComponent
+                            amount={amount}
+                            downPaymentAmount={downPaymentAmount}
+                            downPaymentPercentage={downPaymentPercentage}
+                            term={term}
+                            interestRate={interestRate}
+                            zipCode={zipCode}
+                            extraPrinciplePayment={extraPrinciplePayment}
+                            pmi={pmi}
+                            propertyTax={propertyTax}
+                            creditScore={creditScore}
+                            hoaFees={hoaFees}
+                            homeOwnersInsurance={homeOwnersInsurance}
+                            updateAmount={updateAmount}
+                            updatePaymentAmount={updatePaymentAmount}
+                            updatePaymentPercentage={updatePaymentPercentage}
+                            updateTerm={updateTerm}
+                            updateCreditScore={updateCreditScore}
+                            updateZipcode={updateZipcode}
+                            updateHomeOwnersInsurance={updateHomeOwnersInsurance}
+                            updateHoaFees={updateHoaFees}
+                            updateInterestRate={updateInterestRate}
+                            updatePropertyTax={updatePropertyTax}
+                            updateExtraPayment={updateExtraPayment}
+                            updatePmi={updatePmi}/>
                     </Col>
                 </Row>
             </Container>
