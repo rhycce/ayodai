@@ -109,7 +109,6 @@ export default function MortgageCalculator(){
                             downPaymentPercentage={downPaymentPercentage}
                             term={term}
                             interestRate={interestRate}
-                            zipCode={zipCode}
                             extraPrinciplePayment={extraPrinciplePayment}
                             pmi={pmi}
                             propertyTax={propertyTax}
@@ -121,7 +120,6 @@ export default function MortgageCalculator(){
                             updatePaymentPercentage={updatePaymentPercentage}
                             updateTerm={updateTerm}
                             updateCreditScore={updateCreditScore}
-                            updateZipcode={updateZipcode}
                             updateHomeOwnersInsurance={updateHomeOwnersInsurance}
                             updateHoaFees={updateHoaFees}
                             updateInterestRate={updateInterestRate}
