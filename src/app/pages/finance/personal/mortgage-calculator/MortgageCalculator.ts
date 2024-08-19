@@ -4,7 +4,6 @@ export interface Mortgage {
     downPaymentPercentage: number,
     term: number,
     interestRate: number,
-    zipCode: number,
     extraPrinciplePayment?: number,
     pmi?: number,
     creditScore?: CreditScore,
@@ -16,7 +15,6 @@ export interface Mortgage {
     updatePaymentPercentage?: (value: string) => void,
     updateTerm?: (value: string) => void,
     updateCreditScore?: (value: string) => void,
-    updateZipcode?: (value: string) => void,
     updateHomeOwnersInsurance?: (value: string) => void,
     updateHoaFees?: (value: string) => void,
     updateInterestRate?: (value: string) => void,
@@ -93,9 +91,11 @@ export function calculateAmortizationSummary(x:Mortgage):AmortizationSummary{
 }
 
 function calculateMonthlyPayment(x:Mortgage){
-    const interest = x.interestRate/12
+    const interest = x.interestRate/(12 * 100)
     const principal = x.amount - x.downPaymentAmount
     const numOfPayments = x.term * 12
-    const interestExp = Math.pow(interest+1, numOfPayments)
-    return (principal * interest * interestExp) / (interestExp - 1);
+    const interestExp = Math.pow(1 + interest, -numOfPayments)
+    const numerator = interest * principal
+    const denominator = 1 - interestExp
+    return numerator/denominator;
 }

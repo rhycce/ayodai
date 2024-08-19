@@ -94,15 +94,6 @@ export function MortgageInputComponent(x: Mortgage) {
                 </InputGroup>
 
             </FormGroup>
-            <FormGroup className={'mb-3'} controlId={'formZipCode'}>
-                <FormLabel>
-                    ZIP code
-                </FormLabel>
-                <FormControl type={'number'} value={x.zipCode} placeholder={'0'}
-                             onChange={(e) => {
-                                 x.updateZipcode ? x.updateZipcode(e.target.value) : logSilentUpdate('zipCode');
-                             }}/>
-            </FormGroup>
             <FormCheck type={'switch'}
                        id={'extendedSwitch'}
                        label={'Taxes, PMI, HOA...'}
