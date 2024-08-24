@@ -4,6 +4,7 @@ export interface Mortgage {
     downPaymentPercentage: number,
     term: number,
     interestRate: number,
+    zipCode: number,
     extraPrinciplePayment?: number,
     pmi?: number,
     creditScore?: CreditScore,
@@ -15,6 +16,7 @@ export interface Mortgage {
     updatePaymentPercentage?: (value: string) => void,
     updateTerm?: (value: string) => void,
     updateCreditScore?: (value: string) => void,
+    updateZipcode?: (value: string) => void,
     updateHomeOwnersInsurance?: (value: string) => void,
     updateHoaFees?: (value: string) => void,
     updateInterestRate?: (value: string) => void,
@@ -36,6 +38,15 @@ export function numberToTwoDecimalPlaces(value: number | undefined): string {
     if (value)
         return value.toFixed(2)
     return '0'
+}
+
+export function stringToNumber(value:string | undefined):number{
+    if(value){
+        const  result = parseFloat(value.replace(/,/g, ''));
+        console.log(`updating ${value} to ${result}` )
+        return result
+    }
+    return 0;
 }
 
 export interface MonthlyBreakdown{

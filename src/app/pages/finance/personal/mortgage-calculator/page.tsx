@@ -11,15 +11,16 @@ import {MortgageBreakdownComponent} from "@/app/pages/finance/personal/mortgage-
 
 export default function MortgageCalculator(){
     const [amount, setAmount] = useState<number>(450000)
-    const [downPaymentAmount, setDownPaymentAmount] = useState<number>(900000)
+    const [downPaymentAmount, setDownPaymentAmount] = useState<number>(90000)
     const [downPaymentPercentage, setDownPaymentPercentage] = useState<number>(20)
     const [term, setTerm] = useState<number>(30)
     const [interestRate, setInterestRate] = useState<number>(6.5)
+    const [zipCode, setZipCode] = useState<number>(10040)
     const [extraPrinciplePayment, setExtraPrinciplePayment] = useState<number>(0)
     const [pmi, setPmi] = useState<number>(0)
-    const [propertyTax, setPropertyTax] = useState<number>(0)
+    const [propertyTax, setPropertyTax] = useState<number>((0.99/(12 *100)) * amount)
     const [hoaFees, setHoaFees] = useState<number>(0)
-    const [homeOwnersInsurance, setHomeOwnersInsurance] = useState<number>(189)
+    const [homeOwnersInsurance, setHomeOwnersInsurance] = useState<number>(225)
     const [creditScore, setCreditScore] = useState<CreditScore>(CreditScore["740+"])
     function updateAmount(value: string){
         const intValue = parseFloat(value)
@@ -45,6 +46,10 @@ export default function MortgageCalculator(){
     }
     function updateCreditScore(value:string){
         setCreditScore(CreditScore[value])
+    }
+    function updateZipcode(value: string){
+        const intValue = parseInt(value)
+        setZipCode(intValue)
     }
     function updateHomeOwnersInsurance(value: string){
         const intValue = parseFloat(value)
@@ -84,6 +89,7 @@ export default function MortgageCalculator(){
                             downPaymentPercentage={downPaymentPercentage}
                             term={term}
                             interestRate={interestRate}
+                            zipCode={zipCode}
                             extraPrinciplePayment={extraPrinciplePayment}
                             pmi={pmi}
                             propertyTax={propertyTax}
@@ -95,6 +101,7 @@ export default function MortgageCalculator(){
                             updatePaymentPercentage={updatePaymentPercentage}
                             updateTerm={updateTerm}
                             updateCreditScore={updateCreditScore}
+                            updateZipcode={updateZipcode}
                             updateHomeOwnersInsurance={updateHomeOwnersInsurance}
                             updateHoaFees={updateHoaFees}
                             updateInterestRate={updateInterestRate}
@@ -109,6 +116,7 @@ export default function MortgageCalculator(){
                             downPaymentPercentage={downPaymentPercentage}
                             term={term}
                             interestRate={interestRate}
+                            zipCode={zipCode}
                             extraPrinciplePayment={extraPrinciplePayment}
                             pmi={pmi}
                             propertyTax={propertyTax}
@@ -120,6 +128,7 @@ export default function MortgageCalculator(){
                             updatePaymentPercentage={updatePaymentPercentage}
                             updateTerm={updateTerm}
                             updateCreditScore={updateCreditScore}
+                            updateZipcode={updateZipcode}
                             updateHomeOwnersInsurance={updateHomeOwnersInsurance}
                             updateHoaFees={updateHoaFees}
                             updateInterestRate={updateInterestRate}

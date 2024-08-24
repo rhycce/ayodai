@@ -50,17 +50,17 @@ function BreakdownChart(data: IChartData){
                                 return (
                                     <ListGroupItem className={'mt-2'} size='lg' key={'list_group_item_' + i}>
                                         <InputGroup>
+                                            <InputGroupText className={`w-5 m-2 rounded-full border-[${data.datasets[0].backgroundColor[i]} bg-[${data.datasets[0].backgroundColor[i]}]`}></InputGroupText>
                                             <InputGroupText>
                                                 {data.labels[i]}
                                             </InputGroupText>
-                                            <InputGroupText className={'place-content-end'}>
-                                                   $ {dataset}
+                                            <InputGroupText className={'place-content-end flex-grow'}>
+                                                $ {dataset}
                                             </InputGroupText>
                                         </InputGroup>
                                     </ListGroupItem>
                                 )
                                 }
-
                             )
                         }
 

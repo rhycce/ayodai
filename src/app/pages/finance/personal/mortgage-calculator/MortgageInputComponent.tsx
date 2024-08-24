@@ -4,6 +4,7 @@ import {useState} from "react";
 import {Mortgage, numberToTwoDecimalPlaces} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
 import {Form, FormCheck, FormControl, FormGroup, FormLabel, FormSelect, InputGroup} from "react-bootstrap";
 import InputGroupText from "react-bootstrap/InputGroupText";
+import {Features} from "@/app/ui/common/Features";
 
 export function MortgageInputComponent(x: Mortgage) {
     const [extended, setExtended] = useState<boolean>(false)
@@ -98,6 +99,16 @@ export function MortgageInputComponent(x: Mortgage) {
                        id={'extendedSwitch'}
                        label={'Taxes, PMI, HOA...'}
                        onChange={(e) => updateExtended(e.target.checked)}/>
+            {Features.ZipcodeTaxLookup.enabled &&
+                <FormGroup className={'mb-3'} controlId={'formZipCode'}>
+                    <FormLabel>
+                        ZIP code
+                    </FormLabel>
+                    <FormControl type={'number'} value={x.zipCode} placeholder={'0'}
+                                 onChange={(e) => {
+                                     x.updateZipcode ? x.updateZipcode(e.target.value) : logSilentUpdate('zipCode');
+                                 }}/>
+                </FormGroup>}
             {extended && <>
                 <FormGroup className={'mb-3'} controlId={'formCreditScore'}>
                     <FormLabel>
