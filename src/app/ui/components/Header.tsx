@@ -6,7 +6,6 @@ import {
   NavbarCollapse,
   NavbarToggle,
   NavLink,
-  Row,
 } from 'react-bootstrap'
 import { Logo } from '@/app/ui/components/Icons'
 import { NavItemObjectData } from '@/app/ui/constants/Index'
