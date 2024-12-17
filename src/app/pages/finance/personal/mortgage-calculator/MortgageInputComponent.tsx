@@ -4,7 +4,7 @@ import {useState} from "react";
 import {Mortgage, numberToTwoDecimalPlaces} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";
 import {Form, FormCheck, FormControl, FormGroup, FormLabel, FormSelect, InputGroup} from "react-bootstrap";
 import InputGroupText from "react-bootstrap/InputGroupText";
-import {Features} from "@/app/ui/common/Features";
+import {Features} from "@/app/ui/components/Features";
 
 export function MortgageInputComponent(x: Mortgage) {
     const [extended, setExtended] = useState<boolean>(false)

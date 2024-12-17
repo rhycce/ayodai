@@ -3,7 +3,7 @@
 import PageContainer from "@/app/pages/PageContainer";
 import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
-import {PageBannerComponent} from "@/app/ui/common/PageBannerComponent";
+import {PageBannerComponent} from "@/app/ui/components/PageBannerComponent";
 import {MortgageInputComponent} from "@/app/pages/finance/personal/mortgage-calculator/MortgageInputComponent";
 import {useState} from "react";
 import {CreditScore} from "@/app/pages/finance/personal/mortgage-calculator/MortgageCalculator";

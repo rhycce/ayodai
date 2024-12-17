@@ -4,7 +4,7 @@ import {
 } from "react-bootstrap";
 import React from "react";
 import Link from "next/link";
-import {Icons} from "@/app/ui/common/Icons";
+import {Icons} from "@/app/ui/components/Icons";
 const GoalImage = "Firefly personal development goals 9927.jpg"
 
 export function AyodaiDescriptionComponent(){

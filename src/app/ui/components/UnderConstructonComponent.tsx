@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import {Col, Image, Row} from "react-bootstrap";
 import React from "react";
-import {Icons} from "@/app/ui/common/Icons";
+import {Icons} from "@/app/ui/components/Icons";
 const GoalImage = "../../../Firefly personal development goals 9927.jpg"
 
 export function UnderConstructionComponent(){

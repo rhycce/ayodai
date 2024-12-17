@@ -1,7 +1,7 @@
 import PageContainer from "@/app/pages/PageContainer";
 import Container from "react-bootstrap/Container";
 import {Row} from "react-bootstrap";
-import {PageBannerComponent} from "@/app/ui/common/PageBannerComponent";
+import {PageBannerComponent} from "@/app/ui/components/PageBannerComponent";
 import {PersonalFinanceContentComponent} from "@/app/ui/finance/personal/PersonalFinanceContentComponent";
 
 export default function PersonalFinance(){
