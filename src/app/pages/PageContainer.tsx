@@ -11,12 +11,13 @@ export default function PageContainer({
 }>) {
   return (
     <main>
-      <div className={'pt-[4.75rem] lg:pt-5.25rem overflow-hidden'}>
+      <Container>
         <Row>
           <Header />
         </Row>
+
         <Row>{children}</Row>
-      </div>
+      </Container>
       <CopyrightComponent />
     </main>
   )

@@ -6,11 +6,7 @@ import { AyodaiDescriptionComponent } from '@/app/ui/components/AyodaiDescriptio
 export default function Home() {
   return (
     <PageContainer>
-      <Container>
-        <Row>
-          <AyodaiDescriptionComponent />
-        </Row>
-      </Container>
+      <AyodaiDescriptionComponent />
     </PageContainer>
   )
 }
