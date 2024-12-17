@@ -15,7 +15,6 @@ export default function PageContainer({
         <Row>
           <Header />
         </Row>
-
         <Row>{children}</Row>
       </Container>
       <CopyrightComponent />

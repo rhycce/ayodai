@@ -1,7 +1,7 @@
-import PageContainer from '@/app/pages/PageContainer'
 import { Description } from '@/app/ui/components/Description'
+import PageContainer from '@/app/pages/PageContainer'
 
-export default function Home() {
+export default function About() {
   return (
     <PageContainer>
       <Description />

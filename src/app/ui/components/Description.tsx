@@ -7,7 +7,7 @@ import Link from "next/link";
 import {Icons} from "@/app/ui/components/Icons";
 const GoalImage = "Firefly personal development goals 9927.jpg"
 
-export function AyodaiDescriptionComponent(){
+export function Description(){
     return (
         <Container className={'my-3'}>
             <Row>

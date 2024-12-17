@@ -21,8 +21,8 @@ export const NavItemObjectData = [
   },
   {
     id: '4',
-    title: 'New Account',
-    url: '#new-account',
+    title: 'About',
+    url: '/about',
   },
   {
     id: '5',

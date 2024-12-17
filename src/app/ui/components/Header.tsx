@@ -27,7 +27,7 @@ export function Header() {
               <NavLink
                 key={data.id}
                 href={data.url}
-                className={'hover:font-extrabold'}
+                className={'capitalize hover:font-extrabold'}
               >
                 {data.title}
               </NavLink>
