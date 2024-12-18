@@ -4,32 +4,44 @@ import React from 'react'
 export default function StandardButton({
   onClick,
   children,
-  px,
   className,
-  variant,
   href,
-  size
+  textClassName,
 }: Readonly<{
   onClick: () => void
   children: React.ReactNode
-  px?: string
   className?: string
-  variant?: string
   href?: string
-  size?:'sm'|'lg'
+  textClassName?: string
 }>) {
-  const classes = `${px || ''} ${className || ''}`
+  const classes = `button inline-block ${className || ''}`
+  const spanClasses = `block ${textClassName || ''}`
+  return href
+    ? renderLink(href, classes, spanClasses, children)
+    : renderButton(classes, spanClasses, children, onClick)
+}
+
+function renderButton(
+  classes: string,
+  spanClasses: string,
+  children: React.ReactNode,
+  onClick: () => void
+) {
   return (
-    <div>
-      <Button
-        variant={variant ? variant : 'light'}
-        className={classes}
-        onClick={!href ? onClick : () => {}}
-        href={href}
-        size={size}
-      >
-        <span>{children}</span>
-      </Button>
-    </div>
+    <button className={classes} onClick={onClick}>
+      <span className={spanClasses}>{children}</span>
+    </button>
+  )
+}
+function renderLink(
+  href: string,
+  classes: string,
+  spanClasses: string,
+  children: React.ReactNode
+) {
+  return (
+    <Button href={href} className={classes}>
+      <span className={spanClasses}>{children}</span>{' '}
+    </Button>
   )
 }
