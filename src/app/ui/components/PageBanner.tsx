@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PageBannerComponent({text, subText}: Readonly<{
+export function PageBanner({text, subText}: Readonly<{
     text: string,
     subText: string|undefined
 }>){

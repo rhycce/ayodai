@@ -1,10 +1,10 @@
 import PageContainer from '@/app/pages/PageContainer'
-import { Description } from '@/app/ui/components/Description'
+import Hero from '@/app/ui/components/Hero'
 
 export default function Home() {
   return (
     <PageContainer>
-      <Description />
+      <Hero/>
     </PageContainer>
   )
 }
