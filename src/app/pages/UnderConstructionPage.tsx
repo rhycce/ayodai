@@ -1,10 +1,10 @@
-import PageContainer from "@/app/pages/PageContainer";
-import {UnderConstructionComponent} from "@/app/ui/componentsUnderConstructonComponent";
+import PageContainer from '@/app/pages/PageContainer'
+import { UnderConstructionComponent } from '@/app/ui/componentsUnderConstructonComponent'
 
-export function UnderConstructionPage(){
-    return (
-        <PageContainer>
-            <UnderConstructionComponent/>
-        </PageContainer>
-    );
+export function UnderConstructionPage() {
+  return (
+    <PageContainer>
+      <UnderConstructionComponent />
+    </PageContainer>
+  )
 }
