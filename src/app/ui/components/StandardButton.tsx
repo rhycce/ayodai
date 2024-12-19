@@ -14,7 +14,7 @@ export default function StandardButton({
   href?: string
   textClassName?: string
 }>) {
-  const classes = `button inline-block ${className || ''}`
+  const classes = `${className || ''}`
   const spanClasses = `block ${textClassName || ''}`
   return href
     ? renderLink(href, classes, spanClasses, children)
@@ -28,9 +28,9 @@ function renderButton(
   onClick: () => void
 ) {
   return (
-    <button className={classes} onClick={onClick}>
+    <Button className={classes} onClick={onClick}>
       <span className={spanClasses}>{children}</span>
-    </button>
+    </Button>
   )
 }
 function renderLink(
