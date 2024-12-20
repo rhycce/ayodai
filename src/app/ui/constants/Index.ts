@@ -39,7 +39,7 @@ export const FeatureCardData = [
       'Break down any personal project into actionable steps by following the guideline set by this app.',
     iconUrl: '',
     url: '/',
-    displayOnMobile: true,
+    displayOnMobile: '',
   },
   {
     id: '2',
@@ -48,7 +48,7 @@ export const FeatureCardData = [
       'Set tasks with milestones and quantifiable measures to integrate into your daily life. A check box is one step closer to your goal',
     iconUrl: '',
     url: '/',
-    displayOnMobile: true,
+    displayOnMobile: '',
   },
   {
     id: '3',
@@ -57,7 +57,7 @@ export const FeatureCardData = [
       'Conveniently port the tasks over to your favorite calendar app or to-do list.',
     iconUrl: '',
     url: '/',
-    displayOnMobile: true,
+    displayOnMobile: '',
   },
   {
     id: '4',
@@ -66,7 +66,7 @@ export const FeatureCardData = [
       'See what projects are popular. Join group challenges and grow together as a community.',
     iconUrl: '',
     url: '/',
-    displayOnMobile: false,
+    displayOnMobile: 'max-md:hidden',
   },
   {
     id: '5',
@@ -75,7 +75,7 @@ export const FeatureCardData = [
       'See what projects are popular. Join group challenges and grow together as a community.',
     iconUrl: '',
     url: '/',
-    displayOnMobile: false,
+    displayOnMobile: 'max-md:hidden',
   },
   {
     id: '6',
@@ -84,6 +84,45 @@ export const FeatureCardData = [
       'See what projects are popular. Join group challenges and grow together as a community.',
     iconUrl: '',
     url: '/',
-    displayOnMobile: false,
+    displayOnMobile: 'max-md:hidden',
+  },
+]
+
+export const CollaborationCardData = [
+  {
+    id: '1',
+    displayOnMobile: '',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
+  },
+  {
+    id: '2',
+    displayOnMobile: '',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
+  },
+  {
+    id: '3',
+    displayOnMobile: '',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
+  },
+  {
+    id: '4',
+    displayOnMobile: 'max-md:hidden',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
+  },
+  {
+    id: '5',
+    displayOnMobile: 'max-md:hidden',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
+  },
+  {
+    id: '6',
+    displayOnMobile: 'max-md:hidden',
+    title: 'Google Calendar',
+    tag: 'Coming Soon',
   },
 ]

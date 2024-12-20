@@ -1,9 +1,10 @@
 'use client'
 import Section from '@/app/ui/components/Section'
 import Container from 'react-bootstrap/Container'
-import { Card, CardBody, CardLink, CardTitle } from 'react-bootstrap'
+import { Card, CardBody, CardTitle } from 'react-bootstrap'
 import { FeatureCardData } from '@/app/ui/constants/Index'
 import { RightArrowHead } from '@/app/ui/components/Icons'
+import Link from 'next/link'
 
 export default function Features() {
   return (
@@ -14,39 +15,54 @@ export default function Features() {
             <h1>Work smarter, not harder with Ayodai</h1>
           </span>
         </div>
-        <div className={'flex flex-wrap justify-center '}>
+        <div className={'flex flex-wrap'}>
           {FeatureCardData.map((dataObject) => (
-            <Card
+            <div
               key={dataObject.id}
-              style={{ minWidth: '18rem' }}
-              className={`md:w-1/3 lg:w-1/4 shadow m-2.5 rounded`}
+              className={`${dataObject.displayOnMobile}`}
             >
-              <CardBody className={`flex flex-col`}>
-                <div className={`h-3/4`}>
-                  <CardTitle> {dataObject.title}</CardTitle>
-                  <CardBody>{dataObject.content}</CardBody>
-                </div>
+              <Card
+                style={{
+                  minWidth: '18rem',
+                  maxWidth: '24rem',
+                }}
+                className={`hover:shadow-2xl m-2.5 rounded`}
+              >
+                <Link
+                  href={dataObject.url}
+                  className={`no-underline text-black`}
+                >
+                  <CardBody className={`flex flex-col`}>
+                    <div className={`h-3/4`}>
+                      <CardTitle> {dataObject.title}</CardTitle>
+                      <CardBody>
+                        <div className={`lg:h-36`}>
+                          <p>{dataObject.content}</p>
+                        </div>
+                      </CardBody>
+                    </div>
 
-                <div className={`flex flex-row place-content-between pt-2.5`}>
-                  <div className={`w-1/4`}></div>
-                  <div>
-                    <CardLink
-                      href={dataObject.url}
-                      className={'no-underline hover:font-bold text-black  '}
+                    <div
+                      className={`flex flex-row place-content-between pt-2.5`}
                     >
-                      <div className={`flex`}>
-                        <span
-                          className={`text-xs uppercase bold place-content-center`}
-                        >
-                          Explore more
-                        </span>
-                        <RightArrowHead className={`h-7`} />
+                      <div className={`w-1/4`}></div>
+                      <div>
+                        <p className={'font-bold '}>
+                          <div className={`flex`}>
+                            <span
+                              className={`text-xs uppercase bold place-content-center`}
+                            >
+                              Explore more
+                            </span>
+                            <RightArrowHead className={`h-7`} />
+                          </div>
+                        </p>
                       </div>
-                    </CardLink>
-                  </div>
-                </div>
-              </CardBody>
-            </Card>
+                    </div>
+                  </CardBody>
+                </Link>
+              </Card>
+            </div>
           ))}
         </div>
       </Container>
