@@ -1,3 +1,8 @@
+export interface SVGProps{
+  height: number|string,
+  width: number|string,
+  fill?: string,
+}
 export const NavItemObjectData = [
   {
     id: '0',
@@ -40,6 +45,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
+    actionIcon: '@/app/assets/svg/calendarGray.sv',
   },
   {
     id: '2',
@@ -49,15 +55,17 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
+    actionIcon: '@/app/assets/svg/listGray.sv',
   },
   {
     id: '3',
-    title: 'Connect anywhere',
+    title: 'Export anywhere',
     content:
       'Conveniently port the tasks over to your favorite calendar app or to-do list.',
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
+    actionIcon: '@/app/assets/svg/exportGray.sv',
   },
   {
     id: '4',
@@ -67,6 +75,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
+    actionIcon: '@/app/assets/svg/exploreGray.sv',
   },
   {
     id: '5',
@@ -76,6 +85,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
+    actionIcon: '@/app/assets/svg/exploreGray.sv',
   },
   {
     id: '6',
@@ -85,6 +95,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
+    actionIcon: '@/app/assets/svg/exploreGray.sv',
   },
 ]
 
