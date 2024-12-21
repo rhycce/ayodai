@@ -1,8 +1,3 @@
-export interface SVGProps{
-  height: number|string,
-  width: number|string,
-  fill?: string,
-}
 export const NavItemObjectData = [
   {
     id: '0',
@@ -45,7 +40,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
-    actionIcon: '@/app/assets/svg/calendarGray.sv',
+    actionIcon: 'calendarGray.svg',
   },
   {
     id: '2',
@@ -55,7 +50,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
-    actionIcon: '@/app/assets/svg/listGray.sv',
+    actionIcon: 'listGray.svg',
   },
   {
     id: '3',
@@ -65,7 +60,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
-    actionIcon: '@/app/assets/svg/exportGray.sv',
+    actionIcon: 'exportGray.svg',
   },
   {
     id: '4',
@@ -75,17 +70,17 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
-    actionIcon: '@/app/assets/svg/exploreGray.sv',
+    actionIcon: 'exploreGray.svg',
   },
   {
     id: '5',
-    title: 'Explore challenges',
+    title: 'Celebrate Wins',
     content:
-      'See what projects are popular. Join group challenges and grow together as a community.',
+      'Showcase your achievements. Generate a custom filter to put on your pictures and share with your friends.',
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
-    actionIcon: '@/app/assets/svg/exploreGray.sv',
+    actionIcon: 'badge.svg',
   },
   {
     id: '6',
@@ -95,7 +90,7 @@ export const FeatureCardData = [
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
-    actionIcon: '@/app/assets/svg/exploreGray.sv',
+    actionIcon: 'exploreGray.svg',
   },
 ]
 
