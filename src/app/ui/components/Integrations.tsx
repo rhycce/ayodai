@@ -2,7 +2,7 @@ import Section from '@/app/ui/components/Section'
 import { CollaborationCardData } from '@/app/ui/constants/Index'
 import Container from 'react-bootstrap/Container'
 import { Image } from 'react-bootstrap'
-import comingSoon from '@/app/assets/images/coming_soon.jpg'
+const comingSoon = 'coming_soon.jpg'
 
 export default function Integrations() {
   return (
@@ -19,9 +19,9 @@ export default function Integrations() {
           {CollaborationCardData.map((company) => (
             <div
               key={company.id}
-              className={`mx-2.5 md:mx-auto my-2.5 md:my-5 sm:w-12 lg:w-24 shadow ${company.displayOnMobile} list-item`}
+              className={`mx-2.5 md:mx-auto my-2.5 md:my-5 sm:w-12 lg:w-24 shadow ${company.displayOnMobile}`}
             >
-              <Image src={comingSoon.src} alt={'Coming Soon'} />
+              <Image src={comingSoon} alt={'Coming Soon'} />
             </div>
           ))}
         </div>

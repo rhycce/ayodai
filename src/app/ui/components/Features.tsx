@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import { Card, CardBody, CardTitle } from 'react-bootstrap'
 import { FeatureCardData } from '@/app/ui/constants/Index'
 import { RightArrowHead } from '@/app/ui/components/Icons'
+import { ReactSVG } from 'react-svg'
 import Link from 'next/link'
 
 export default function Features() {
@@ -36,27 +37,30 @@ export default function Features() {
                     <div className={`h-3/4`}>
                       <CardTitle> {dataObject.title}</CardTitle>
                       <CardBody>
-                        <div className={`lg:h-36`}>
-                          <p>{dataObject.content}</p>
-                        </div>
+                        <div className={`lg:h-36`}>{dataObject.content}</div>
                       </CardBody>
                     </div>
 
                     <div
                       className={`flex flex-row place-content-between pt-2.5`}
                     >
-                      <div className={`w-1/4`}></div>
+                      <div className={`w-1/4`}>
+                        <ReactSVG
+                          src={'ayodai_cropped.svg'}
+                          height={'50'}
+                          width={'50'}
+                          fill={'none'}
+                        />
+                      </div>
                       <div>
-                        <p className={'font-bold '}>
-                          <div className={`flex`}>
-                            <span
-                              className={`text-xs uppercase bold place-content-center`}
-                            >
-                              Explore more
-                            </span>
-                            <RightArrowHead className={`h-7`} />
-                          </div>
-                        </p>
+                        <div className={`flex`}>
+                          <span
+                            className={`text-xs uppercase bold place-content-center`}
+                          >
+                            Explore more
+                          </span>
+                          <RightArrowHead className={`h-7`} />
+                        </div>
                       </div>
                     </div>
                   </CardBody>
