@@ -38,7 +38,7 @@ export const FeatureCardData = [
     content:
       'Get a graphical view of your current financial health. This is your starting point.',
     iconUrl: '',
-    url: '/',
+    url: '/finance/personal/snapshot',
     displayOnMobile: '',
     actionIcon: 'listGray.svg',
   },
