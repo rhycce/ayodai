@@ -18,5 +18,9 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
 )
 
 export const IconList ={
-    ghIcon : 'githubMark.svg'
+    ghIcon : 'githubMark.svg',
+    housePositiveIcon: 'housePositive.svg',
+    houseNegativeIcon: 'houseNegative.svg',
+    cashRecieveIcon: 'cashRecieve.svg',
+    cashGiveIcon: 'cashGive.svg'
 }
