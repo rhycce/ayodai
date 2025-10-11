@@ -4,7 +4,6 @@ import { Col, Image, Row } from 'react-bootstrap'
 import React from 'react'
 import Link from 'next/link'
 import Icon from '@/app/ui/components/Icon'
-import { height } from 'dom-helpers'
 const GoalImage = 'Firefly personal development goals 9927.jpg'
 const ghIcon = 'githubMark.svg'
 export function Description() {
