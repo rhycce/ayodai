@@ -1,17 +1,14 @@
-import PageContainer from '@/app/ui/components/PageContainer'
-import Container from 'react-bootstrap/Container'
-import { Col, Row } from 'react-bootstrap'
+import SnapshotView from '@/app/finance/personal/snapshot/components/SnapshotView'
+import SnapshotBreakdown from '@/app/finance/personal/snapshot/components/SnapshotBreakdown'
+import FinanceSnapshotOutline from '@/app/finance/personal/snapshot/components/FinanceSnapshotOutline'
 
 export default function FinanceSnapshotPage() {
   return (
-    <PageContainer>
-      <Container>
-        <Row>
-          <Col></Col>
-          <Col md={2}></Col>
-          <Col></Col>
-        </Row>
-      </Container>
-    </PageContainer>
+    <FinanceSnapshotOutline
+      viewId={'snapshotView'}
+      breakdownId={'snapshotBreakdown'}
+      viewChildren={<SnapshotView />}
+      breakdownChildren={<SnapshotBreakdown />}
+    />
   )
 }
