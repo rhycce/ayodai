@@ -44,7 +44,11 @@ export default function Features() {
                       className={`flex flex-row place-content-between pt-2.5`}
                     >
                       <div className={`w-1/4`}>
-                        <Icon src={dataObject.actionIcon} height={'30'} />
+                        <Icon
+                          src={dataObject.actionIcon}
+                          height={'30'}
+                          width={'30'}
+                        />
                       </div>
                       <div>
                         <div className={`flex`}>

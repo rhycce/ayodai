@@ -34,49 +34,49 @@ export const NavItemObjectData = [
 export const FeatureCardData = [
   {
     id: '1',
-    title: 'Plan anything',
+    title: 'Create a snapshot',
     content:
-      'Break down any personal project into actionable steps by following the guideline set by this app.',
-    iconUrl: '',
-    url: '/',
-    displayOnMobile: '',
-    actionIcon: 'calendarGray.svg',
-  },
-  {
-    id: '2',
-    title: 'Improve everyday',
-    content:
-      'Set tasks with milestones and quantifiable measures to integrate into your daily life. A check box is one step closer to your goal',
+      'Get a graphical view of your current financial health. This is your starting point.',
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
     actionIcon: 'listGray.svg',
   },
   {
-    id: '3',
-    title: 'Export anywhere',
+    id: '2',
+    title: 'Plan the journey',
     content:
-      'Conveniently port the tasks over to your favorite calendar app or to-do list.',
+      'Use the impact tools to decide which goal to tackle first. Break it down into bite-size chucks and review long-term impact of each decision.',
     iconUrl: '',
     url: '/',
     displayOnMobile: '',
     actionIcon: 'exportGray.svg',
   },
   {
-    id: '4',
-    title: 'Explore challenges',
+    id: '3',
+    title: 'Improve everyday',
     content:
-      'See what projects are popular. Join group challenges and grow together as a community.',
+      'Set milestones and check-in regularly to make sure you are on track. Each tick is a step closer to your goal.',
+    iconUrl: '',
+    url: '/',
+    displayOnMobile: '',
+    actionIcon: 'calendarGray.svg',
+  },
+  {
+    id: '4',
+    title: 'Export anywhere',
+    content:
+      'Conveniently port your reports into your favorite spreadsheet or document tracker.\n',
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
-    actionIcon: 'exploreGray.svg',
+    actionIcon: 'download_svgrepo_com.svg',
   },
   {
     id: '5',
     title: 'Celebrate Wins',
     content:
-      'Showcase your achievements. Generate a custom filter to put on your pictures and share with your friends.',
+      'Showcase your achievements. Generate a custom badge and replay your collection at the end of each year.',
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
@@ -84,9 +84,9 @@ export const FeatureCardData = [
   },
   {
     id: '6',
-    title: 'Explore challenges',
+    title: 'Explore resources',
     content:
-      'See what projects are popular. Join group challenges and grow together as a community.',
+      'See what goals are popular. Though you are working on yourself, you are not alone. Find your community and grow together.',
     iconUrl: '',
     url: '/',
     displayOnMobile: 'max-md:hidden',
