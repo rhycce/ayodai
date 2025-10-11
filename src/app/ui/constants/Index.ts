@@ -2,7 +2,7 @@ export const NavItemObjectData = [
   {
     id: '0',
     title: 'Features',
-    url: '#features',
+    url: '/#features',
   },
   {
     id: '1',

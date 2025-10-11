@@ -1,10 +1,12 @@
+'use client'
 import Container from 'react-bootstrap/Container'
 import { Col, Image, Row } from 'react-bootstrap'
 import React from 'react'
 import Link from 'next/link'
-import { Icons } from '@/app/ui/components/Icons'
+import Icon from '@/app/ui/components/Icon'
+import { height } from 'dom-helpers'
 const GoalImage = 'Firefly personal development goals 9927.jpg'
-
+const ghIcon = 'githubMark.svg'
 export function Description() {
   return (
     <Container className={'my-3'}>
@@ -42,10 +44,16 @@ export function Description() {
                 <Link href={'https://github.com/rhycce'}>J. Vanderpuye</Link> to
                 break goals into chunks and plan actionable items for personal
                 development. And the underlying goal for this project is to
-                expand my knowledge of React + Typescript + Github while I
-                journey through the world of web app development. Follow its
+                expand my knowledge of <b>Typescript</b> + <b>Node.js</b> +{' '}
+                <b>React</b> while I journey through the world of web app
+                development. Live production hosted on{' '}
+                <Link href={'https://netlify.com'}>Netlify</Link>. Follow its
                 progress on
-                <center>{Icons.github}</center>
+                <center>
+                  <Link href={'https://github.com/rhycce/ayodai'}>
+                    <Icon src={ghIcon} />
+                  </Link>
+                </center>
               </div>
             </Row>
           </Container>

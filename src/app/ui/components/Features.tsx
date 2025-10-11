@@ -53,7 +53,11 @@ export default function Features() {
                           >
                             Explore more
                           </span>
-                          <Icon src={rightArraowHeadPath} height={'30'} />
+                          <Icon
+                            src={rightArraowHeadPath}
+                            height={'25'}
+                            fill={'gray'}
+                          />
                         </div>
                       </div>
                     </div>
