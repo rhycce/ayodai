@@ -1,5 +1,4 @@
 import { ContentLogoCardComponent } from '@/app/ui/components/ContentLogoCardComponent'
-import { Icons } from '@/app/ui/components/Icons'
 import Container from 'react-bootstrap/Container'
 import { Col, Row } from 'react-bootstrap'
 

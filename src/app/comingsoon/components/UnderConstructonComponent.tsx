@@ -1,8 +1,10 @@
 import Container from 'react-bootstrap/Container'
 import { Col, Image, Row } from 'react-bootstrap'
 import React from 'react'
-import { Icons } from '@/app/ui/components/Icons'
-const GoalImage = '../../../Firefly personal development goals 9927.jpg'
+import Link from 'next/link'
+import Icon from '@/app/ui/components/Icon'
+import { ImageList } from '@/app/lib/Images'
+import { IconList } from '@/app/lib/Icons'
 
 export function UnderConstructionComponent() {
   return (
@@ -10,7 +12,7 @@ export function UnderConstructionComponent() {
       <Row>
         <Col>
           <Image
-            src={GoalImage}
+            src={ImageList.GoalImage}
             alt={'Personal Goal Image'}
             title={'Personal Goal Image'}
           />
@@ -26,7 +28,11 @@ export function UnderConstructionComponent() {
               <div className={'text-center'}>
                 <b>ayodai</b> devs are working hard to bring you this exciting
                 new feature. Follow our progress on
-                <center>{Icons.github}</center>
+                <center>
+                  <Link href={'https://github.com/rhycce/ayodai'}>
+                    <Icon src={IconList.ghIcon} />
+                  </Link>
+                </center>
               </div>
             </div>
           </Container>

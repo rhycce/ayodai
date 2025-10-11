@@ -4,15 +4,15 @@ import { Col, Image, Row } from 'react-bootstrap'
 import React from 'react'
 import Link from 'next/link'
 import Icon from '@/app/ui/components/Icon'
-const GoalImage = 'Firefly personal development goals 9927.jpg'
-const ghIcon = 'githubMark.svg'
+import { ImageList } from '@/app/lib/Images'
+import { IconList } from '@/app/lib/Icons'
 export function Description() {
   return (
     <Container className={'my-3'}>
       <Row>
         <Col>
           <Image
-            src={GoalImage}
+            src={ImageList.GoalImage}
             alt={'Personal Goal Image'}
             title={'Personal Goal Image'}
           />
@@ -50,7 +50,7 @@ export function Description() {
                 progress on
                 <center>
                   <Link href={'https://github.com/rhycce/ayodai'}>
-                    <Icon src={ghIcon} />
+                    <Icon src={IconList.ghIcon} />
                   </Link>
                 </center>
               </div>

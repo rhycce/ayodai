@@ -7,7 +7,7 @@ import {
   NavbarToggle,
   NavLink,
 } from 'react-bootstrap'
-import { Logo } from '@/app/ui/components/Icons'
+import { Logo } from '@/app/lib/Icons'
 import { NavItemObjectData } from '@/app/ui/constants/Index'
 import Container from 'react-bootstrap/Container'
 export function Header() {

@@ -1,4 +1,4 @@
-import { UnderConstructionComponent } from '@/app/ui/components/UnderConstructonComponent'
+import { UnderConstructionComponent } from '@/app/comingsoon/components/UnderConstructonComponent'
 import PageContainer from '@/app/ui/components/PageContainer'
 
 export default function UnderConstructionPage() {

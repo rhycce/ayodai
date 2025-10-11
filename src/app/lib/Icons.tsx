@@ -16,3 +16,7 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
+
+export const IconList ={
+    ghIcon : 'githubMark.svg'
+}
