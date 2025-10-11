@@ -9,13 +9,13 @@ const rightArraowHeadPath = 'right-arrow-svgrepo-com.svg'
 export default function Features() {
   return (
     <Section id={'features'} className={'px-2.5'}>
-      <Container fluid={'md mt-2.5 lg:mt-5 xl:mt-7.5 px-0'}>
+      <Container fluid={'md mt-2.5 lg:mt-5 xl:mt-7.5 px-0 '}>
         <div className={'my-5'}>
           <span className={`text-center`}>
             <h1>Work smarter, not harder with Ayodai</h1>
           </span>
         </div>
-        <div className={'flex flex-wrap'}>
+        <div className={'flex flex-wrap justify-center'}>
           {FeatureCardData.map((dataObject) => (
             <div
               key={dataObject.id}
