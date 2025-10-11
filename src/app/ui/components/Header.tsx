@@ -14,7 +14,8 @@ export function Header() {
   return (
     <Navbar
       expand={'lg'}
-      className={'backdrop-blur-sm lg:backdrop-blur-sm border-b'}
+      fixed={'top'}
+      className={'backdrop-blur-lg lg:backdrop-blur-lg border-b'}
     >
       <Container>
         <NavbarBrand href={'/'}>

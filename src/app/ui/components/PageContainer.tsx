@@ -12,7 +12,7 @@ export default function PageContainer({
   return (
     <main>
       <Container>
-        <Row>
+        <Row className={'pb-20'}>
           <Header />
         </Row>
         <Row>{children}</Row>
