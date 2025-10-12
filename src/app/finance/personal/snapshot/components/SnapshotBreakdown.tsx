@@ -14,7 +14,7 @@ export default function SnapshotBreakdown({
     <>
       <Container>
         <Row>
-          <h3>{title}</h3>
+          <h3 className={'px-5'}>{title}</h3>
         </Row>
         <Row>{accountList}</Row>
         {actionButton}

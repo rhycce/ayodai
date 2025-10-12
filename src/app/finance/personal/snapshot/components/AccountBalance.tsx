@@ -1,4 +1,4 @@
-import { Badge, Stack } from 'react-bootstrap'
+import {  Stack } from 'react-bootstrap'
 
 export default function AccountBalance({
   isAsset,
@@ -11,15 +11,20 @@ export default function AccountBalance({
   currency: string
   label: string
 }) {
+  const color = isAsset ? 'green' : 'red'
   return (
     <div>
       <Stack direction={'vertical'} gap={2}>
-        <div><b>
-          {currency}{isAsset?'':'-'}{value}
-        </b></div>
-        <Badge pill bg={isAsset ? 'success' : 'danger'}>
+        <div className={'text-center text-lg'}>
+          {currency}
+          {isAsset ? '' : '-'}
+          {value}
+        </div>
+        <div
+          className={`border-1 border-${color}-600 text-center small bg-${color}-100 rounded-lg m-0`}
+        >
           {label}
-        </Badge>
+        </div>
       </Stack>
     </div>
   )

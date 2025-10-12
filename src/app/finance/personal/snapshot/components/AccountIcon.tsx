@@ -1,5 +1,6 @@
 import { IconList } from '@/app/lib/Icons'
 import Icon from '@/app/ui/components/Icon'
+import React from 'react'
 
 export default function AccountIcon({
   type,
@@ -39,5 +40,5 @@ export default function AccountIcon({
       source = isAsset ? IconList.cashRecieveIcon : IconList.cashGiveIcon
   }
 
-  return <Icon src={source} height={'30'} width={'30'} />
+  return <Icon src={`/${source}`} height={'25'} width={'25'} />
 }

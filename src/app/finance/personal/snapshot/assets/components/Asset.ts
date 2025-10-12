@@ -1,3 +1,5 @@
+import { generateUUID } from '@/app/lib/Utilities'
+
 export interface Asset {
   label: 'asset'
   id: string
@@ -29,6 +31,34 @@ export type AssetType =
   | 'Promissory Notes'
   | 'Other'
 
-export function describeAssetAccount(asset: Asset):string{
+export function describeAssetAccount(asset: Asset): string {
   return 'current'
+}
+export interface AssetAction {
+  type: 'add' | 'modify' | 'delete'
+  id: string
+  asset: Asset
+}
+export function assetReducer(assets: Asset[], action: AssetAction) {
+  switch (action.type) {
+    case 'add': {
+      action.asset.id = generateUUID()
+      return [...assets, action.asset]
+    }
+    case 'modify': {
+      return assets.map((asset) => {
+        if (asset.id === action.asset.id) {
+          return action.asset
+        } else {
+          return asset
+        }
+      })
+    }
+    case 'delete': {
+      return assets.filter((asset) => asset.id !== action.id)
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type)
+    }
+  }
 }

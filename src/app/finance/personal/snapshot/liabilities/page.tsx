@@ -3,18 +3,28 @@ import SnapshotView from '@/app/finance/personal/snapshot/components/SnapshotVie
 import SnapshotBreakdown from '@/app/finance/personal/snapshot/components/SnapshotBreakdown'
 import FinanceSnapshotOutline from '@/app/finance/personal/snapshot/components/FinanceSnapshotOutline'
 import AccountList from '@/app/finance/personal/snapshot/components/AccountList'
-import { useState } from 'react'
+import { useReducer } from 'react'
+import { liabilityReducer } from '@/app/finance/personal/snapshot/liabilities/components/Liabilities'
+import { initialLiabilities } from '@/app/lib/DemoData'
 
 export default function LiabilitiesSnapshotPage() {
-const [liabilities, setLiabilities] = useState([])
+  const [liabilities, dispatch] = useReducer(
+    liabilityReducer,
+    initialLiabilities
+  )
   return (
     <FinanceSnapshotOutline
       viewId={'liabilitiesSnapshotView'}
       breakdownId={'liabilitiesSnapshotBreakdown'}
-      viewChildren={<SnapshotView />}
+      viewChildren={<SnapshotView liabilities={liabilities} />}
       breakdownChildren={
         <SnapshotBreakdown
-          accountList={<AccountList liabilities={liabilities}/>}
+          accountList={
+            <AccountList
+              liabilities={liabilities}
+              liabilityDispatch={dispatch}
+            />
+          }
           title={'Asset Accounts'}
           actionButton={<div></div>}
         />

@@ -11,7 +11,7 @@ export default function PageContainer({
 }>) {
   return (
     <main>
-      <Container>
+      <Container className={'px-0'}>
         <Row className={'pb-20'}>
           <Header />
         </Row>
